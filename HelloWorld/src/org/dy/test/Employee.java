@@ -1,12 +1,11 @@
 package org.dy.test;
 
 /* 文件名 : Employee.java */
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private String address;
     private int number;
     public Employee(String name, String address, int number) {
-        System.out.println("Employee 构造函数");
         this.name = name;
         this.address = address;
         this.number = number;
@@ -29,5 +28,9 @@ public class Employee {
     }
     public int getNumber() {
         return number;
+    }
+
+    public int compareTo(Employee other){
+        return number - other.number;
     }
 }
